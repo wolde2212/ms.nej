@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Ms. Neju! ✨</title>
+    <style>
+        /* 🎨 GLOBAL & SMOOTH SCROLL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 💎 CUSTOM CYBERPUNK SCROLLBAR */
+        html::-webkit-scrollbar {
+            width: 8px;
+        }
+        html::-webkit-scrollbar-track {
+            background: #060913;
+        }
+        html::-webkit-scrollbar-thumb {
+            background: linear-gradient(#6366f1, #ec4899);
+            border-radius: 50px;
+        }
+
+        body {
+            background-color: #060913;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* 📄 FULL PAGE SECTIONS */
+        .full-page {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+            perspective: 1000px;
+        }
+
+        /* 🌌 BACKGROUNDS WITH NEON GRADIENTS */
+        #page1 {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(9, 13, 22, 0.9)),
+                        radial-gradient(circle at 50% -20%, rgba(99, 102, 241, 0.35), transparent 70%);
+        }
+
+        #page2 {
+            background: linear-gradient(180deg, rgba(9, 13, 22, 0.9), rgba(15, 23, 42, 0.8)),
+                        radial-gradient(circle at 50% 120%, rgba(236, 72, 153, 0.3), transparent 70%);
+        }
+
+        /* ✨ ULTIMATE GLASSMORPHISM CARD */
+        .card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            width: 100%;
+            max-width: 400px;
+            border-radius: 32px;
+            padding: 40px 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6),
+                        0 0 50px rgba(99, 102, 241, 0.15);
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.8s;
+        }
+
+        /* 📸 AVATAR GLOW EFFECT */
+        .avatar-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 25px auto;
+        }
+
+        .avatar-glow {
+            position: absolute;
+            top: -5px; left: -5px; width: 150px; height: 150px;
+            background: linear-gradient(135deg, #6366f1, #ec4899, #3b82f6);
+            border-radius: 50%;
+            filter: blur(15px);
+            opacity: 0.8;
+            animation: spinGlow 5s linear infinite;
+        }
+
+        @keyframes spinGlow {
+            100% { transform: rotate(360deg); }
+        }
+
+        .avatar-img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.9);
+            z-index: 2;
+        }
+
+        /* RECTANGULAR PHOTO PREMIUM FRAME */
+        .rect-photo-wrapper {
+            width: 100%;
+            height: 210px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            position: relative;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .rect-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .rect-photo-wrapper:hover .rect-photo {
+            transform: scale(1.05);
+        }
+
+        /* 🔤 PREMIUM TYPOGRAPHY */
+        .main-title {
+            font-size: 2.3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 40%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .neon-badge {
+            display: inline-block;
+            padding: 6px 18px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffffff;
+            background: linear-gradient(90deg, #6366f1, #ec4899);
+            border-radius: 50px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.5);
+        }
+
+        .wish-paragraph {
+            font-size: 0.96rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+            text-align: justify;
+            background: rgba(15, 23, 42, 0.6);
+            padding: 22px;
+            border-radius: 20px;
+            border-top: 3px solid #ec4899;
+            margin-bottom: 20px;
+        }
+
+        /* 💻 CS TERMINAL BOX */
+        .terminal-box {
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.82rem;
+            background: #05070c;
+            padding: 14px;
+            border-radius: 14px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            line-height: 1.6;
+        }
+        .keyword { color: #ff7b72; }
+        .variable { color: #79c0ff; }
+        .string { color: #a5d6ff; }
+        .comment { color: #8b949e; }
+
+        /* 🔘 SHINY BUTTONS */
+        .action-btn {
+            background: linear-gradient(135deg, #6366f1 0%, #d946ef 100%);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 25px rgba(99, 102, 241, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 15px;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(217, 70, 239, 0.7);
+        }
+
+        /* 🌟 CELEBRATION BACKGROUND PARTICLES */
+        .particle {
+            position: absolute;
+            pointer-events: none;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: floatUp 8s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+
+        /* MAGIC TOUCH SPARKLES */
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            animation: blowOut 0.8s ease-out forwards;
+        }
+
+        @keyframes blowOut {
+            0% { transform: translate(-50%, -50__) scale(1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) translate(var(--mx), var(--my)) scale(0); opacity: 0; }
+        }
+
+        .hint-arrow {
+            font-size: 0.8rem;
+            color: #475569;
+            margin-top: 15px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-6px); }
+            60% { transform: translateY(-3px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PARTICLES CONTAINER -->
+    <div id="particle-container" style="position: absolute; width:100%; height:100%; overflow:hidden; z-index:1; pointer-events: none;"></div>
+
+    <!-- 📄 PAGE 1 -->
+    <section id="page1" class="full-page">
+        <div class="card" id="card1">
+            <div class="avatar-wrapper">
+                <div class="avatar-glow"></div>
+                <img src="c:\Users\hp\Desktop\CD\5818900982472052524.jpg" alt="Ms. Neju 1" class="avatar-img" onerror="this.src='https://via.placeholder.com/150/1e293b/ffffff?text=Photo+1'">
+            </div>
+
+            <h1 class="main-title">Happy Birthday!</h1>
+            <div class="neon-badge">Ms. Neju ✨</div>
+            
+            <p style="color: #94a3b8; font-size: 0.98rem; line-height: 1.8; margin-bottom: 15px; text-align: justify;">
+                ዛሬ ወደዚህች ምድር የመጣሽበት ቀን በመሆኑ ለእኔም ትልቅ የደስታ ቀን ነው። ላንቺ ያለኝ አክብሮትና ፍቅር ሁሌም ልዩ ነው። እውነተኛ ጓደኝነት ምን ማለት እንደሆነ በተግባር ስላሳየሽኝ አመሰግናለሁ።
+            </p>
+
+            <button class="action-btn" onclick="scrollToPage2()">Read Full Wish ⬇️</button>
+            <div class="hint-arrow">or scroll down</div>
+        </div>
+    </section>
+
+    <!-- 📄 PAGE 2 -->
+    <section id="page2" class="full-page">
+        <div class="card" id="card2" style="opacity: 0; transform: translateY(50px) rotateX(-10deg);">
+            <div class="rect-photo-wrapper">
+                <img src="neju_photo2.jpg" alt="Ms. Neju 2" class="rect-photo" onerror="this.src='https://via.placeholder.com/400x200/1e293b/ffffff?text=Photo+2'">
+            </div>
+
+            <div class="wish-paragraph">
+                በህይወቴ ውስጥ ካሉኝ ሰዎች ሁሉ መገኘትሽ ትልቅ ትርጉም ካላቸው ጥቂት ልዩ ሰዎች መካከል አንዷ ነሽ። እንደ ምርጥ ጓደኛም እንደ ክላስሜትም ላሳየሽኝ ቅንነት፣ መደጋገፍና አብሮነት ከልብ የመነጨ ትልቅ አክብሮት አለኝ። ይህ አዲሱ እድሜሽ የስኬት ማማ ይሁንልሽ!
+            </div>
+
+            <div class="terminal-box">
+                <span class="comment">// Incrementing life level...</span><br>
+                <span class="keyword">if</span> (<span class="variable">today</span> == <span class="string">"Neju's Birthday"</span>) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">Neju</span>.<span>age</span>++;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Level Up & Shine ✨"</span>);<br>
+                }
+            </div>
+
+            <button class="action-btn" style="background: linear-gradient(135deg, #334155 0%, #1e293b 100%); box-shadow: none;" onclick="scrollToPage1()">Go Back Up ⬆️</button>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        function scrollToPage2() {
+            document.getElementById('page2').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToPage1() {
+            document.getElementById('page1').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // SCROLL TRIGGER ANIMATION
+        window.addEventListener('scroll', () => {
+            const card2 = document.getElementById('card2');
+            const page2Pos = document.getElementById('page2').getBoundingClientRect().top;
+            if (page2Pos < window.innerHeight / 1.5) {
+                card2.style.opacity = '1';
+                card2.style.transform = 'translateY(0) rotateX(0)';
+            }
+        });
+
+        // BACKGROUND PARTICLES
+        const container = document.getElementById('particle-container');
+        const colors = ['#6366f1', '#ec4899', '#3b82f6', '#34d399', '#fbbf24'];
+        for (let i = 0; i < 35; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const size = Math.random() * 6 + 4;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+            particle.style.animationDuration = `${Math.random() * 4 + 6}s`;
+            particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            container.appendChild(particle);
+        }
+
+        // ✨ INTERACTIVE SPARKLE EFFECT (MAGIC TOUCH)
+        window.addEventListener('mousemove', (e) => {
+            createSparkle(e.pageX, e.pageY);
+        });
+        window.addEventListener('touchmove', (e) => {
+            createSparkle(e.touches[0].pageX, e.touches[0].pageY);
+        });
+
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = `${x}px`;
+            sparkle.style.top = `${y}px`;
+            
+            // Random explosion direction
+            const mx = (Math.random() - 0.5) * 60 + 'px';
+            const my = (Math.random() - 0.5) * 60 + 'px';
+            sparkle.style.setProperty('--mx', mx);
+            sparkle.style.setProperty('--my', my);
+            
+            sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 800);
+        }
+    </script>
+</body>
+</html>
